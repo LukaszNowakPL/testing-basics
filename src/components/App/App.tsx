@@ -1,6 +1,9 @@
 import React from 'react';
+import {Footer} from '../Footer/Footer';
+import {Header} from '../Header/Header';
 import {BrowserRouter} from 'react-router-dom';
 import {getBaseName} from './App.helpers';
+import {MainRouter} from '../MainRouter/MainRouter';
 import {Container} from '@material-ui/core';
 
 export const App: React.FC = () => {
@@ -9,7 +12,9 @@ export const App: React.FC = () => {
     return (
         <BrowserRouter basename={basename}>
             <Container maxWidth={'sm'}>
-                <p>Testing basics</p>
+                <Header />
+                <MainRouter />
+                <Footer />
             </Container>
         </BrowserRouter>
     );

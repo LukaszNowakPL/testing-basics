@@ -27,7 +27,10 @@ module.exports = {
         {
             displayName: 'unit',
             testEnvironment: 'node',
-            roots: ['test/unit'],
+            testMatch: [
+                "<rootDir>test/views/**/unit/**/*.test.{ts,tsx}",
+                "<rootDir>test/unit/**/*.test.{ts,tsx}",
+            ],
             setupFilesAfterEnv: ['./test/setupJestDom.ts'],
             moduleNameMapper: {
                 '\\.css$': 'identity-obj-proxy',
@@ -36,7 +39,10 @@ module.exports = {
         {
             displayName: 'integration',
             testEnvironment: 'jest-environment-jsdom-sixteen',
-            roots: ['test/integration'],
+            testMatch: [
+                "<rootDir>test/views/**/integration/**/*.test.{ts,tsx}",
+                "<rootDir>test/integration/**/*.test.{ts,tsx}",
+            ],
             restoreMocks: true,
             clearMocks: true,
             setupFilesAfterEnv: ['./test/setupJestDom.ts'],

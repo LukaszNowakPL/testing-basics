@@ -1,6 +1,6 @@
 import React from 'react';
 import {Header} from '../../src/components/Header/Header';
-import {renderWithRouter} from "../_helpers/renderWithRouters";
+import {renderWithRouter} from '../_helpers/renderWithRouters';
 
 describe('Header', () => {
     it('renders component', async () => {
@@ -22,7 +22,7 @@ describe('Header', () => {
     it('renders integration testing submenu when on /integration-tests route', () => {
         const {getByRole} = renderWithRouter(<Header />, ['/integration-tests']);
         expect(getByRole('link', {name: /components integration/i})).toBeInTheDocument();
-        expect(getByRole('link', {name: /bad example/i})).toBeInTheDocument();
+        expect(getByRole('link', {name: /engineer approach/i})).toBeInTheDocument();
         expect(getByRole('link', {name: /api testing/i})).toBeInTheDocument();
         expect(getByRole('link', {name: /msw/i})).toBeInTheDocument();
     });

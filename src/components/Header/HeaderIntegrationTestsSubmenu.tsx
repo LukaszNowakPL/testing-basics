@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid/Grid';
 
 export const HeaderIntegrationTestSubmenu: React.FC = () => {
     const componentsIntegrationPath = generatePath(ROUTES.INTEGRATION_TEST_EXAMPLE, {id: 'components-integration'});
-    const badExamplePath = generatePath(ROUTES.INTEGRATION_TEST_EXAMPLE, {id: 'bad-example'});
+    const engineerApproachPath = generatePath(ROUTES.INTEGRATION_TEST_EXAMPLE, {id: 'engineer-approach'});
     const apiTestingPath = generatePath(ROUTES.INTEGRATION_TEST_EXAMPLE, {id: 'api-testing'});
     const mswTestingPath = generatePath(ROUTES.INTEGRATION_TEST_EXAMPLE, {id: 'msw-testing'});
 
@@ -18,8 +18,8 @@ export const HeaderIntegrationTestSubmenu: React.FC = () => {
                 </NavLink>
             </Grid>
             <Grid item xs={3}>
-                <NavLink className={headerButton} activeClassName={headerButtonSelected} to={badExamplePath}>
-                    Bad example
+                <NavLink className={headerButton} activeClassName={headerButtonSelected} to={engineerApproachPath}>
+                    Engineer approach
                 </NavLink>
             </Grid>
             <Grid item xs={3}>

@@ -1,7 +1,8 @@
 import {css} from 'emotion';
 
 export const headerContainer = css({
-    marginBottom: '100px',
+    marginBottom: '40px',
+    padding: '20px',
 });
 
 export const headerMenu = css({

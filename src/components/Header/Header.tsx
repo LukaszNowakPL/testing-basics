@@ -3,15 +3,16 @@ import {headerButton, headerButtonSelected, headerContainer, headerMenu} from '.
 import {NavLink, useLocation} from 'react-router-dom';
 import {ROUTES} from '../../helpers/routes';
 import Grid from '@material-ui/core/Grid/Grid';
-import {HeaderUnitTestsSubmenu} from "./HeaderUnitTestsSubmenu";
-import {HeaderIntegrationTestSubmenu} from "./HeaderIntegrationTestsSubmenu";
+import {HeaderUnitTestsSubmenu} from './HeaderUnitTestsSubmenu';
+import {HeaderIntegrationTestSubmenu} from './HeaderIntegrationTestsSubmenu';
+import {Card} from '@material-ui/core';
 
 export const Header: React.FC = () => {
     const isUnitTestsRoute = useLocation().pathname.includes(ROUTES.UNIT_TESTS);
     const isIntegrationTestsRoute = useLocation().pathname.includes(ROUTES.INTEGRATION_TESTS);
 
     return (
-        <div className={headerContainer}>
+        <Card className={headerContainer}>
             <h1>Basic testing examples</h1>
             <Grid container className={headerMenu} spacing={2}>
                 <Grid item xs={6}>
@@ -27,6 +28,6 @@ export const Header: React.FC = () => {
             </Grid>
             {isUnitTestsRoute && <HeaderUnitTestsSubmenu />}
             {isIntegrationTestsRoute && <HeaderIntegrationTestSubmenu />}
-        </div>
+        </Card>
     );
 };

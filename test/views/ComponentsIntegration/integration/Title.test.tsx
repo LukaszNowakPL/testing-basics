@@ -21,7 +21,7 @@ describe('Title', () => {
         // Negative checking example
         expect(await queryByText('Not found text on application')).not.toBeInTheDocument();
 
-        // Checks it it instantly is in the document - selecting by role
+        // Checks if it instantly is in the document - selecting by role
         expect(getByRole('heading', {name: /todo list/i})).toBeInTheDocument();
     });
 });

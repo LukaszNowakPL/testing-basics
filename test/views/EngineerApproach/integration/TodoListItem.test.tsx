@@ -7,7 +7,7 @@ describe('TodoListItem', () => {
     const onDelete = jest.fn();
 
     // Bad example:
-    // - TodoListItem is a subcomponent of TodoList so any tests should focus on main component
+    // - TodoListItem is a subcomponent of TodoList so any tests should focus on a main component
     // - Nevertheless it might be tested on wider integration test of TodoForm
     it('renders component', () => {
         const todoMock = 'todo name';

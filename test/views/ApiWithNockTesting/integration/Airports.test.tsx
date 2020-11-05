@@ -118,11 +118,11 @@ describe('Airports', () => {
     it('renders error message if api call is rejected', async () => {
         const postScope = defaultPostErrorScope();
 
-        const {getByText} = await sendNewAirport();
+        const {findByText} = await sendNewAirport();
 
         await waitFor(() => postScope.done());
 
-        await waitFor(() => expect(getByText(/adding airport failed/i)).toBeInTheDocument());
+        expect(await findByText(/adding airport failed/i)).toBeInTheDocument();
     });
 
     it('recalls get /integration-tests/api-with-nock-testing/api/countries/1/airports after successfully posting new airport', async () => {

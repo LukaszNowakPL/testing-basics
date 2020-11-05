@@ -30,7 +30,7 @@ describe('Countries', () => {
     it('renders error message if api call is rejected', async () => {
         const scope = defaultErrorScope();
 
-        const {getByText} = renderWithRouter(
+        const {findByText} = renderWithRouter(
             <Countries />,
             ['/integration-tests/api-with-nock-testing/countries'],
             ROUTES.API_WITH_NOCK_TESTING_COUNTRIES,
@@ -38,13 +38,13 @@ describe('Countries', () => {
 
         await waitFor(() => scope.done());
 
-        await waitFor(() => expect(getByText(/fetching countries list failed/i)).toBeInTheDocument());
+        expect(await findByText(/fetching countries list failed/i)).toBeInTheDocument();
     });
 
     it('renders data of fetched country', async () => {
         const scope = defaultScope();
 
-        const {getByText} = renderWithRouter(
+        const {findByText} = renderWithRouter(
             <Countries />,
             ['/integration-tests/api-with-nock-testing/countries'],
             ROUTES.API_WITH_NOCK_TESTING_COUNTRIES,
@@ -52,6 +52,6 @@ describe('Countries', () => {
 
         await waitFor(() => scope.done());
 
-        await waitFor(() => expect(getByText(/mocked country name/i)).toBeInTheDocument());
+        expect(await findByText(/mocked country name/i)).toBeInTheDocument();
     });
 });

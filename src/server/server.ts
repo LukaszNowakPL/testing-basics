@@ -32,6 +32,7 @@ export default function() {
         },
 
         routes() {
+            // Api testing
             this.get('/integration-tests/api-testing/api/countries', schema => {
                 // @ts-ignore
                 return schema.countries.all();
@@ -41,6 +42,23 @@ export default function() {
                 return schema.airports.where({country_id: request.params.id});
             });
             this.post('/integration-tests/api-testing/api/countries/:id/airports', (schema, request) => {
+                // @ts-ignore
+                let attrs = {...JSON.parse(request.requestBody), country_id: request.params.id};
+                // @ts-ignore
+                return schema.airports.create(attrs);
+                // return new Response(404, {"Content-Type" : "application/json"}, { error: `Some error message`});
+            });
+
+            // Api with Nock testing
+            this.get('/integration-tests/api-with-nock-testing/api/countries', schema => {
+                // @ts-ignore
+                return schema.countries.all();
+            });
+            this.get('/integration-tests/api-with-nock-testing/api/countries/:id/airports', (schema, request) => {
+                // @ts-ignore
+                return schema.airports.where({country_id: request.params.id});
+            });
+            this.post('/integration-tests/api-with-nock-testing/api/countries/:id/airports', (schema, request) => {
                 // @ts-ignore
                 let attrs = {...JSON.parse(request.requestBody), country_id: request.params.id};
                 // @ts-ignore

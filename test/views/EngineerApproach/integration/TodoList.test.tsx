@@ -19,7 +19,7 @@ describe('TodoList', () => {
 
     // Bad example:
     // - It might be tested on wider integration test of TodoForm
-    // - It's strongly dependant on implementation (i.e. name of called prop, or knowledge that lis-item is a child of tested component)
+    // - It's strongly dependant on implementation (i.e. name of called prop, or knowledge that list-item is a child of tested component)
     it('calls setTodos prop on delete button click', async () => {
         const todosMock = ['first', 'second', 'third'];
         const setTodosMock = jest.fn();

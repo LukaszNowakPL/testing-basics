@@ -8,7 +8,7 @@ export const HeaderIntegrationTestSubmenu: React.FC = () => {
     const componentsIntegrationPath = generatePath(ROUTES.INTEGRATION_TEST_EXAMPLE, {id: 'components-integration'});
     const engineerApproachPath = generatePath(ROUTES.INTEGRATION_TEST_EXAMPLE, {id: 'engineer-approach'});
     const apiTestingPath = generatePath(ROUTES.INTEGRATION_TEST_EXAMPLE, {id: 'api-testing'});
-    const mswTestingPath = generatePath(ROUTES.INTEGRATION_TEST_EXAMPLE, {id: 'msw-testing'});
+    const apiWithNockTestingPath = generatePath(ROUTES.INTEGRATION_TEST_EXAMPLE, {id: 'api-with-nock-testing'});
 
     return (
         <Grid container>
@@ -28,8 +28,8 @@ export const HeaderIntegrationTestSubmenu: React.FC = () => {
                 </NavLink>
             </Grid>
             <Grid item xs={3}>
-                <NavLink className={headerButton} activeClassName={headerButtonSelected} to={mswTestingPath}>
-                    msw
+                <NavLink className={headerButton} activeClassName={headerButtonSelected} to={apiWithNockTestingPath}>
+                    Api with Nock testing
                 </NavLink>
             </Grid>
         </Grid>

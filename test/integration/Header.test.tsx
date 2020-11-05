@@ -11,19 +11,22 @@ describe('Header', () => {
         expect(getByRole('link', {name: /integration testing/i})).toBeInTheDocument();
 
         expect(queryByRole('link', {name: /1-by-1 example/i})).not.toBeInTheDocument();
+        expect(queryByRole('link', {name: /components integration/i})).not.toBeInTheDocument();
     });
 
     it('renders unit testing submenu when on /unit-tests route', () => {
-        const {getByRole} = renderWithRouter(<Header />, ['/unit-tests']);
+        const {getByRole, queryByRole} = renderWithRouter(<Header />, ['/unit-tests']);
         expect(getByRole('link', {name: /1-by-1 example/i})).toBeInTheDocument();
         expect(getByRole('link', {name: /it.each example/i})).toBeInTheDocument();
+        expect(queryByRole('link', {name: /components integration/i})).not.toBeInTheDocument();
     });
 
     it('renders integration testing submenu when on /integration-tests route', () => {
-        const {getByRole} = renderWithRouter(<Header />, ['/integration-tests']);
+        const {getByRole, queryByRole} = renderWithRouter(<Header />, ['/integration-tests']);
         expect(getByRole('link', {name: /components integration/i})).toBeInTheDocument();
         expect(getByRole('link', {name: /engineer approach/i})).toBeInTheDocument();
         expect(getByRole('link', {name: /api testing/i})).toBeInTheDocument();
-        expect(getByRole('link', {name: /msw/i})).toBeInTheDocument();
+        expect(getByRole('link', {name: /api with nock testing/i})).toBeInTheDocument();
+        expect(queryByRole('link', {name: /1-by-1 example/i})).not.toBeInTheDocument();
     });
 });
